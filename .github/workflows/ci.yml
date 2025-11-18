@@ -27,12 +27,13 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --configuration production
+        run: ng run build  --configuration production  --base-href "/TaskManagerAPP>/"
 
       - name: Upload dist folder
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/todolist/browser # ✅ must point to your Angular build output
+          path: dist/TaskManagerAPP/browser # ✅ must point to your Angular build output
+          
 
   deploy:
     environment:
